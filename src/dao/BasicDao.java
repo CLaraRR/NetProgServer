@@ -100,7 +100,6 @@ public class BasicDao<T> {
 
 	
 	public void update(String sql,Object ... args){
-		System.out.println("修改了！！");
 		Connection connection=null;
 		try{
 			connection=JdbcUtils.getConnection();

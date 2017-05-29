@@ -47,13 +47,14 @@ public class Client {
         while (true) {  
         	
 //        	select()阻塞到至少有一个通道在你注册的事件上就绪了。
-            selector.select();  
+            selector.select();
             //当像Selector注册Channel时，Channel.register()方法会返回一个SelectionKey 对象。
             //这个对象代表了注册到该Selector的通道。
             //可以通过SelectionKey的selectedKeySet()方法访问这些对象。 
             //获得selector中选中的项的迭代器  
             Iterator ite = this.selector.selectedKeys().iterator();  
-            while (ite.hasNext()) {  
+            while (ite.hasNext()) {
+            	System.out.println("eneter");
                 SelectionKey key = (SelectionKey) ite.next();  
                 // 删除已选的key,以防重复处理  
                 ite.remove();  
@@ -91,11 +92,12 @@ public class Client {
         // 服务器可读取消息:得到事件发生的Socket通道  
         SocketChannel channel = (SocketChannel) key.channel();  
         // 创建读取的缓冲区  
-        ByteBuffer buffer = ByteBuffer.allocate(10);  
+        ByteBuffer buffer = ByteBuffer.allocate(1024);  
         channel.read(buffer);  
         byte[] data = buffer.array();  
         String msg = new String(data).trim();  
-        System.out.println("客户端："+msg);  
+        System.out.println("客户端："+msg);
+        key.channel().close();
 //        ByteBuffer outBuffer = ByteBuffer.wrap(msg.getBytes());  
 //        channel.write(outBuffer);// 将消息回送给客户端  
     }  

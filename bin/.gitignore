@@ -1,6 +1,3 @@
-/c3p0-config.xml
-/dao/
-/entities/
-/pojo/
 /service/
 /start/
+/dao/

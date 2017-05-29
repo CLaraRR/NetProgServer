@@ -96,9 +96,16 @@ public class ServerService {
 	 */
 	public void sendMessage(String message)
 	{
+		
 		 SocketChannel channel = (SocketChannel) key.channel();  
+		 ByteBuffer byteBuffer=ByteBuffer.allocate(1024);
+		 byteBuffer.clear();
 		  try {
-			channel.write(ByteBuffer.wrap(new String(message).getBytes()));
+//			channel.write(ByteBuffer.wrap(new String(message).getBytes()));
+			  byteBuffer.put(message.getBytes());
+			  byteBuffer.flip();
+			  channel.write(byteBuffer);
+			System.out.println("消息发出");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
