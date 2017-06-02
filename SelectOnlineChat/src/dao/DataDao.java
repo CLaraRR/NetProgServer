@@ -6,7 +6,7 @@ import entities.Data;
 
 public class DataDao extends BasicDao<Data>{
 	public int addData(String content,int userid,String time)
-	{
+	{ 
 		String sql="insert into data(datacontent,userid,time) values(?,?,?)";
 		update(sql, content,userid,time);
 		String sql2="select * from data where datacontent=? and userid=?";

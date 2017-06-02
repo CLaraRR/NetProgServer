@@ -16,7 +16,7 @@ import java.nio.channels.SocketChannel;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.Scanner;
-
+ 
 public class ClientService implements Service {
 	private  ByteBuffer writeBuffer = ByteBuffer.allocate(1024);
 	private ByteBuffer readBuffer = ByteBuffer.allocate(1024);

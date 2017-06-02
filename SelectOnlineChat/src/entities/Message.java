@@ -1,7 +1,7 @@
 package entities;
 
 import java.sql.Date;
-
+ 
 public class Message {
 	private int messageid;
 	private String content;

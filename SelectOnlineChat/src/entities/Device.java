@@ -1,5 +1,5 @@
 package entities;
-
+ 
 public class Device {
 	private int deviceid;
 	private int userid;

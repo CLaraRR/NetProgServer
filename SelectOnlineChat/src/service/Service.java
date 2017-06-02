@@ -1,7 +1,7 @@
 package service;
 
 import java.util.Date;
-
+ 
 public interface Service {
 
 	 String login(String username,String password);

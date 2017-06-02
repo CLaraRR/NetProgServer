@@ -12,7 +12,7 @@ public class MessageDao extends BasicDao<Message> {
 		return getForList(sql);
 	}
 	public void addMessage(String content,int userid,String time)
-	{
+	{ 
 		String sql="insert into message(userid,content,time) values(?,?,?)";
 		update(sql, userid,content,time);
 	}

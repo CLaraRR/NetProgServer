@@ -8,7 +8,7 @@ import java.util.List;
 import service.ClientService;
 import service.ClientThread;
 import service.Service;
-
+ 
 public class Client {
 	
 	public static void main(String[] args) {

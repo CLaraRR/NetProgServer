@@ -1,5 +1,5 @@
 package entities;
-
+ 
 public class Relation {
 	private int user_id;
 	private int friend;

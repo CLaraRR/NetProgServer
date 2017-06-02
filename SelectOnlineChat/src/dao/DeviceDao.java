@@ -9,7 +9,7 @@ public class DeviceDao extends BasicDao<Device>{
 		return getForValue(sql, deviceId);
 	}
 	public int getDeviceById(int userid)
-	{
+	{ 
 		String sql="select deviceid from device where userid=?";
 		if(getForValue(sql, userid)==null)
 			return -1;
